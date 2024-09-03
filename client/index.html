@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+</head>
+<body>
+    <h1>Expense Tracker</h1>
+
+    <!-- Create New Client -->
+    <div>
+        <h2>Create New Client</h2>
+        <form id="client-form">
+            <input type="text" id="client-name" placeholder="Client Name" required />
+            <input type="text" id="client-contact" placeholder="Contact Info" required />
+            <textarea id="client-description" placeholder="Client Description"></textarea>
+            <button type="submit">Create Client</button>
+        </form>
+    </div>
+
+    <!-- List of Clients -->
+    <div>
+        <h2>Clients</h2>
+        <ol id="client-list"></ol>
+    </div>
+
+    <!-- Create New Project under a Client -->
+    <div id="project-section" style="display:none;">
+        <h2>Projects under <span id="current-client-name"></span></h2>
+        <form id="project-form">
+            <input type="text" id="project-name" placeholder="Project Name" required />
+            <textarea id="project-description" placeholder="Project Description"></textarea>
+            <button type="submit">Create Project</button>
+        </form>
+        <ol id="project-list"></ol>
+    </div>
+
+    <!-- Create New Expense under a Project -->
+    <div id="expense-section" style="display:none;">
+        <h2>Expenses under <span id="current-project-name"></span></h2>
+        <form id="expense-form">
+            <input type="date" id="expense-date" placeholder="Expense Date"required/> 
+            <input type="text" id="expense-description" placeholder="Expense Description" required />
+            <input type="number" id="expense-amount" placeholder="Expense Amount" required />
+            <input type="text" id="investment" placeholder="Investment" required/>
+            <button type="submit">Add Expense</button>
+        </form>   
+        <label for="investment-filter">Filter by Investment:</label>
+<select id="investment-filter">
+    <option value="all">All</option>
+    <!-- Dynamically populated options -->
+</select>
+
+<!-- Button to Reset the Filter -->
+<button id="reset-filter">Reset Filter</button>
+        <ol id="expense-list"></ol>
+    </div>
+    
+   
+
+    <script src="app.js"></script>
+    
+</body>
+</html>

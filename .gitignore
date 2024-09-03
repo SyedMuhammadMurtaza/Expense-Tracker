@@ -1,0 +1,26 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# Build output (if applicable)
+build/
+dist/
+
+# Operating system specific files
+.DS_Store
+Thumbs.db
+
+# IDE or Editor folders
+.vscode/
+.idea/
+
+# Package lock file (if you use npm)
+package-lock.json
+
+# # Optional: If you use Yarn, you might want to ignore
+# yarn.lock
