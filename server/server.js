@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 
 // Connect to MongoDB
 const dbURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/expense-tracker';
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(dbURI, { useNewUrlParser: true, });
 
 mongoose.connection.on('error', console.error.bind(console, 'Database connection error:'));
 mongoose.connection.once('open', () => {
