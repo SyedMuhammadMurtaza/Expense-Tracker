@@ -1,4 +1,5 @@
-const apiUrl = 'http://localhost:5000/api';
+const apiUrl = 'https://expense-tracker-backend-u8te.onrender.com/api/clients';
+
 
 // Load all clients on page load
 const loadClients = async () => {
