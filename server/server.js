@@ -5,7 +5,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: 'https://muneeb-exptracker.netlify.app/' // Replace with your actual Netlify site URL
+    origin: 'https://muneeb-exptracker.netlify.app' // Replace with your actual Netlify site URL
   }));
 
 app.use(express.json());
