@@ -1,4 +1,4 @@
-const apiUrl = 'https://expense-tracker-backend-u8te.onrender.com/api/clients';
+const apiUrl = 'https://expense-tracker-backend-u8te.onrender.com/api';
 
 
 // Load all clients on page load
