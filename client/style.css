@@ -66,7 +66,7 @@ form {
   background-color: #8fc45c;
   color: white;
   width: 100%;
-  height: 48px;
+  height: 52px;
   padding: 10px;
   border: none;
   border-radius: 18px;
@@ -177,7 +177,7 @@ button {
   background-color: #8fc45c;
   color: white;
   /* width: 100%; */
-  height: 48px;
+  height: 52px;
   padding: 10px;
   border: none;
   border-radius: 18px;
@@ -205,85 +205,74 @@ select {
   margin-right: 10px;
   width: 13rem;
 }
+input[type="date"],
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%; /* Full width for inputs */
+    padding: 10px; /* Padding for comfort */
+    margin: 5px 0; /* Margin for spacing */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0); /* Adjust indicator color */
+}
 
 #reset-filter {
   margin-top: 10px;
 }
 
-/* Table Container */
-#expense-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 50px 0;
-  font-size: 16px;
+/* General table styles */
+/* Container to enable scrolling */
+.table-container {
+  max-width: 100%; /* Limit to full width */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+  margin: 70px 0; /* Margin for spacing */
 }
 
-/* Table Header */
-#expense-table thead {
-  background-color: #8fc45c; /* Primary color */
-  color: white;
+/* General table styles */
+table {
+  width: 100%; /* Full width */
+  border-collapse: collapse; /* Merge borders */
 }
 
-#expense-table th {
-  padding: 12px;
-  text-align: left;
+/* Table header styles */
+thead {
+  background-color: #8fc45c; /* Light background for header */
+  color: #fff;
 }
 
-/* Table Body */
-#expense-table tbody tr {
-  border-bottom: 1px solid #dddddd;
+th, td {
+  text-align: left; /* Align text to the left */
+  padding: 10px; /* Padding for cells */
+  border: 1px solid #ddd; /* Light gray border */
 }
 
-#expense-table td {
-  padding: 12px;
-}
-
-/* Hover Effect */
-#expense-table tbody tr:hover {
-  background-color: #f1f1f1; /* Light gray on hover */
-}
-
-/* Total Row */
-#expense-table tfoot {
-  background-color: #f9f9f9; /* Light background for total row */
-  font-weight: bold;
-}
-
-#expense-table tfoot td {
-  border-top: 2px solid #8fc45c; /* Top border for emphasis */
-}
-
-/* Responsive Design */
+/* Responsive styles for smaller screens */
 @media (max-width: 600px) {
-  #expense-table, 
-  #expense-table thead, 
-  #expense-table tbody, 
-  #expense-table th, 
-  #expense-table td, 
-  #expense-table tr {
-      display: block; /* Make table responsive */
-  }
-  
-  #expense-table tr {
-      margin-bottom: 15px; /* Space between rows */
-  }
-  
-  #expense-table th {
-      position: absolute;
-      top: -9999px;
-      left: -9999px; /* Hide header for small screens */
+  /* Ensure table is always displayed as a table */
+  table {
+      display: table; /* Keep table display */
+      /* min-width: 600px; Minimum width to maintain layout */
+      min-width: 100%;
   }
 
-  #expense-table td {
-      text-align: right; /* Align content to the right */
-      padding-left: 50%; /* Space for label */
-      position: relative;
+  /* Make sure cells stack properly */
+  th, td {
+      display: table-cell; /* Keep cells as table-cell */
   }
+}
 
-  #expense-table td::before {
-      content: attr(data-label); /* Show label before content */
-      position: absolute;
-      left: 10px; /* Adjust spacing */
-      text-align: left; /* Align label to the left */
-  }
+/* Additional styles for buttons, if needed */
+
+
+/* Button hover effect */
+
+
+table#expense-table {
+  margin-top: 50px;
 }
