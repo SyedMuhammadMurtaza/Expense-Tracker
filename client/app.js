@@ -168,6 +168,7 @@ const loadExpenses = async (projectId, projectName) => {
             const amount = parseFloat(document.getElementById('expense-amount').value);
             document.getElementById('expense-amount').value = ''
             const investment = document.getElementById('investment').value;
+            document.getElementById('investment').value = ''
             await createExpense({ description, amount, date, investment, projectId });
             loadExpenses(projectId, projectName);
         };
