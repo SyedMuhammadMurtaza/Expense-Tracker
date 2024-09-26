@@ -7,60 +7,85 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Expense Tracker</h1>
-
-    <!-- Create New Client -->
-    <div>
-        <h2>Create New Client</h2>
-        <form id="client-form">
-            <input type="text" id="client-name" placeholder="Client Name" required />
-            <input type="text" id="client-contact" placeholder="Contact Info" required />
-            <textarea id="client-description" placeholder="Client Description"></textarea>
-            <button type="submit">Create Client</button>
-        </form>
+    <div class="headingContainer">
+        <h1 class="firstHeading">Muneeb's Expense Tracker</h1>
     </div>
 
-    <!-- List of Clients -->
-    <div>
-        <h2>Clients</h2>
-        <ol id="client-list"></ol>
+    <!-- Screen 1: Client Creation and Listing -->
+    <div id="client-screen">
+        <div class="clientContainer">
+            <h2 class="clientCreateHeading">Create New Client</h2>
+            <form id="client-form">
+                <label class="labels" for="name">Name</label>
+                <input class="feilds" type="text" id="client-name"  placeholder="Client Name" required />
+                <label class="labels" for="contactInfo">Client's contact info</label>
+                <input class="feilds" type="text" id="client-contact" placeholder="Contact Info" required />
+                <button class="inputbtn" type="submit">Create Client</button>
+            </form>
+        </div>
+
+        <!-- List of Clients -->
+        <div class="clientsSection">
+            <h2 class="clientCreateHeading">Clients</h2>
+            <ol id="client-list"></ol>
+        </div>
     </div>
 
-    <!-- Create New Project under a Client -->
-    <div id="project-section" style="display:none;">
-        <h2>Projects under <span id="current-client-name"></span></h2>
+    <!-- Screen 2: Project Creation and Listing (Hidden initially) -->
+
+    <div id="project-screen" style="display:none;">
+        <div class="upperDiv">
+            <h2 class="upperDivHeading">Projects under <span id="current-client-name"></span></h2>
+            <button id="back-to-clients">Back to Clients</button>
+        </div>
         <form id="project-form">
-            <input type="text" id="project-name" placeholder="Project Name" required />
-            <textarea id="project-description" placeholder="Project Description"></textarea>
-            <button type="submit">Create Project</button>
+            <label class="labels" for="projectName">Project Name</label>
+            <input type="text" class="feilds" id="project-name" placeholder="Project Name" required />
+            <label class="labels" for="projectDescription">Project Description</label>
+            <textarea class="feilds" id="project-description" placeholder="Project Description"></textarea>
+            <button class="inputbtn" type="submit">Create Project</button>
         </form>
         <ol id="project-list"></ol>
     </div>
 
-    <!-- Create New Expense under a Project -->
-    <div id="expense-section" style="display:none;">
-        <h2>Expenses under <span id="current-project-name"></span></h2>
-        <form id="expense-form">
-            <input type="date" id="expense-date" placeholder="Expense Date"required/> 
-            <input type="text" id="expense-description" placeholder="Expense Description" required />
-            <input type="number" id="expense-amount" placeholder="Expense Amount" required />
-            <input type="text" id="investment" placeholder="Investment" required/>
-            <button type="submit">Add Expense</button>
-        </form>   
-        <label for="investment-filter">Filter by Investment:</label>
-<select id="investment-filter">
-    <option value="all">All</option>
-    <!-- Dynamically populated options -->
-</select>
-
-<!-- Button to Reset the Filter -->
-<button id="reset-filter">Reset Filter</button>
-        <ol id="expense-list"></ol>
+    <!-- Screen 3: Expense Creation and Listing (Hidden initially) -->
+    <div id="expense-screen" style="display:none;">
+        <div class="upperDiv">
+        <h2 class="upperDivHeading">Expenses under <span id="current-project-name"></span></h2>
+        <button id="back-to-projects">Back to Projects</button>
     </div>
-    
-   
+        <form id="expense-form">
+            <label class="labels" for="date">Date</label>
+            <input class="feilds" type="date" id="expense-date" placeholder="Expense Date" required />
+            <label class="labels" for="expDescription">Expense Description</label>
+            <input class="feilds" type="text" id="expense-description" placeholder="Expense Description" required />
+            <label class="labels" for="expAmount">Expense Amount</label>
+            <input class="feilds" type="number" id="expense-amount" placeholder="Expense Amount" required />
+            <label class="labels" for="investment">Investment</label>
+            <input class="feilds" type="text" id="investment" placeholder="Investment" required />
+            <button class="inputbtn" type="submit">Add Expense</button>
+        </form>
+        <label for="investment-filter">Filter by Investment:</label>
+        <select id="investment-filter">
+            <option value="all">All</option>
+            <!-- Dynamically populated options -->
+        </select>
+        <button id="reset-filter">Reset Filter</button>
+        <table id="expense-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Investment</th>
+                </tr>
+            </thead>
+            <tbody id="expense-table-body">
+                <!-- Expense rows will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
 
     <script src="app.js"></script>
-    
 </body>
 </html>
