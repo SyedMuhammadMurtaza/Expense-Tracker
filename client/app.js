@@ -71,7 +71,9 @@ const loadProjects = async (clientId, clientName) => {
         document.getElementById('project-form').onsubmit = async (e) => {
             e.preventDefault();
             const name = document.getElementById('project-name').value.trim();
+            document.getElementById('project-name').value = ''
             const description = document.getElementById('project-description').value.trim();
+            document.getElementById('project-description').value = ''
             
             if (name) {
                 await createProject({ name, description, clientId });
@@ -115,7 +117,7 @@ const loadExpenses = async (projectId, projectName) => {
                     <tr>
                         <td>${new Date(expense.date).toLocaleDateString('en-GB')}</td>
                         <td>${expense.description}</td>
-                        <td>$${expense.amount.toFixed(2)}</td>
+                        <td>${expense.amount.toFixed(2)}</td>
                         <td>${expense.investment}</td>
                     </tr>
                 `;
@@ -127,7 +129,7 @@ const loadExpenses = async (projectId, projectName) => {
             const totalRow = `
                 <tr>
                     <td colspan="3"><strong>Total:</strong></td>
-                    <td><strong>$${totalAmount.toFixed(2)}</strong></td>
+                    <td><strong>${totalAmount.toFixed(2)}</strong></td>
                 </tr>
             `;
             expenseTable.insertAdjacentHTML('beforeend', totalRow);
@@ -160,8 +162,11 @@ const loadExpenses = async (projectId, projectName) => {
         document.getElementById('expense-form').onsubmit = async (e) => {
             e.preventDefault();
             const date = document.getElementById('expense-date').value;
+            document.getElementById('expense-date').value = ''
             const description = document.getElementById('expense-description').value;
+            document.getElementById('expense-description').value = ''
             const amount = parseFloat(document.getElementById('expense-amount').value);
+            document.getElementById('expense-amount').value = ''
             const investment = document.getElementById('investment').value;
             await createExpense({ description, amount, date, investment, projectId });
             loadExpenses(projectId, projectName);
@@ -175,7 +180,9 @@ const loadExpenses = async (projectId, projectName) => {
 document.getElementById('client-form').onsubmit = async (e) => {
     e.preventDefault();
     const name = document.getElementById('client-name').value;
+    document.getElementById('client-name').value = ''
     const contactInfo = document.getElementById('client-contact').value;
+    document.getElementById('client-contact').value = ''
     await createClient({ name, contactInfo });
     loadClients();
 };
